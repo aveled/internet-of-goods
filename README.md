@@ -22,7 +22,7 @@ The Internet of Goods provides the specification, hardware designs, and software
 
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/aveled/internet-of-goods/master/about/images/iog-sketch.png" height="600px">
+    <img src="https://raw.githubusercontent.com/aveled/internet-of-goods/master/about/images/iog-sketch.png" height="500px">
 </p>
 
 
