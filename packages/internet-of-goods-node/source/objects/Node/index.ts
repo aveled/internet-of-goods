@@ -1,8 +1,17 @@
+// #region imports
+    // #region external
+    import Magnet from '../Magnet';
+    // #endregion external
+// #endregion imports
+
+
+
 // #region module
 class Node {
-    routePod () {}
+    private magnets: Magnet[] = [];
 
 
+    public routePod () {}
 }
 // #endregion module
 
