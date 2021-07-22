@@ -8,14 +8,29 @@
 
 // #region module
 class Simulator {
+    private time = 0;
     private pods: Pod[] = [];
+    private locations: string[];
+
+
+    constructor(
+        locations: string[],
+    ) {
+        this.locations = locations;
+    }
 
 
     public send(
         from: string,
         to: string,
-        pod: string,
-    ) {}
+    ) {
+        const pod = new Pod(
+            from,
+            to,
+        );
+
+        this.pods.push(pod);
+    }
 
     public run() {
         this.loop();
@@ -25,10 +40,13 @@ class Simulator {
     private loop() {
         setInterval(() => {
             this.update();
-        }, 1000);
+        }, 1_000);
     }
 
     private update() {
+        console.log(`Running at time ${this.time}`);
+        this.time += 1;
+
         for (const pod of this.pods) {
             this.step(pod);
         }
@@ -39,7 +57,9 @@ class Simulator {
     private step(
         pod: Pod,
     ) {
-
+        if (pod.arrived) {
+            return;
+        }
     }
 
     private refreshArrivedPods() {

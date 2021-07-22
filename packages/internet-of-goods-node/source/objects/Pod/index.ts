@@ -2,8 +2,24 @@
 class Pod {
     private sender = '';
     private destination = '';
-    private arrived = false;
 
+    public location = '';
+    public arrived = false;
+
+
+    constructor(
+        sender: string,
+        destination: string,
+    ) {
+        this.sender = sender;
+        this.destination = destination;
+    }
+
+    public updateLocation(
+        location: string,
+    ) {
+        this.location = location;
+    }
 }
 // #endregion module
 
