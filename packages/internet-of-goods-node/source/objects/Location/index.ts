@@ -1,4 +1,11 @@
 // #region module
+export interface LocationValue {
+    node: string;
+    tube: string;
+    segment: string;
+}
+
+
 /**
  * Location format
  *
@@ -8,12 +15,37 @@
  *
  */
 class Location {
-    private value: string;
+    private value: LocationValue;
 
     constructor(
         value: string,
     ) {
-        this.value = value;
+        this.value = this.parseValue(value);
+    }
+
+    private parseValue (
+        value: string,
+    ) {
+        const split = value.split('-');
+        const [
+            node,
+            tube,
+            segment,
+        ] = split;
+
+        if (
+            !node
+            || !tube
+            || !segment
+        ) {
+            throw 'Invalid location';
+        }
+
+        return {
+            node,
+            tube,
+            segment,
+        };
     }
 }
 // #endregion module
