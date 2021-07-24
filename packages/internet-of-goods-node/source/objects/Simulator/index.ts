@@ -20,25 +20,22 @@
 
 // #region module
 class Network extends EventEmitter {
-    private self = new EventEmitter();
-
-
     constructor() {
         super();
 
-        this.self.on('addNode', this.addNode);
-        this.self.on('sendPod', this.sendPod);
+        this.on('addNode', this.addNode);
+        this.on('sendPod', this.sendPod);
     }
 
 
     private addNode(
-        node: any,
+        nodeDefinition: NodeDefinition,
     ) {
 
     }
 
     private sendPod(
-        node: any,
+        pod: Pod,
     ) {
 
     }
@@ -47,19 +44,21 @@ class Network extends EventEmitter {
 
 class Simulator {
     private network = new Network();
+    private definitions: NodeDefinition[] = [];
 
 
     constructor(
-        nodes: NodeDefinition[],
+        definitions: NodeDefinition[],
     ) {
-        for (const node of nodes) {
-            this.network.emit('addNode', node);
-        }
+        this.definitions = definitions;
+        this.initializeNodes();
     }
 
 
     private initializeNodes() {
-
+        for (const node of this.definitions) {
+            this.network.emit('addNode', node);
+        }
     }
 
 
