@@ -51,6 +51,18 @@ class Network extends EventEmitter {
 
     private update() {
         console.log('network running');
+        const remainingPods: Pod[] = [];
+
+        for (const pod of this.sendingPods) {
+            if (pod.arrived) {
+                continue;
+            }
+
+            // pod.updateLocation();
+            remainingPods.push(pod);
+        }
+
+        this.sendingPods = remainingPods;
     }
 }
 
