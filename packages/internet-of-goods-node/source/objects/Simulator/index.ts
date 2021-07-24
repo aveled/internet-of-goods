@@ -20,24 +20,37 @@
 
 // #region module
 class Network extends EventEmitter {
+    private nodes: Node[] = [];
+    private sendingPods: Pod[] = [];
+
+
     constructor() {
         super();
 
         this.on('addNode', this.addNode);
         this.on('sendPod', this.sendPod);
+
+        setInterval(() => {
+            this.update();
+        }, 1_000);
     }
 
 
     private addNode(
         nodeDefinition: NodeDefinition,
     ) {
-
+        const node = new Node(nodeDefinition);
+        this.nodes.push(node);
     }
 
     private sendPod(
         pod: Pod,
     ) {
+        this.sendingPods.push(pod);
+    }
 
+    private update() {
+        console.log('network running');
     }
 }
 
