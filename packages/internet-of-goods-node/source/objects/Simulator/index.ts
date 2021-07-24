@@ -57,11 +57,11 @@ class Network extends EventEmitter {
 
 class Simulator {
     private network = new Network();
-    private definitions: NodeDefinition[] = [];
+    private definitions: Record<string, NodeDefinition> = {};
 
 
     constructor(
-        definitions: NodeDefinition[],
+        definitions: Record<string, NodeDefinition>,
     ) {
         this.definitions = definitions;
         this.initializeNodes();
@@ -69,7 +69,7 @@ class Simulator {
 
 
     private initializeNodes() {
-        for (const node of this.definitions) {
+        for (const [name, node] of Object.entries(this.definitions)) {
             this.network.emit('addNode', node);
         }
     }
