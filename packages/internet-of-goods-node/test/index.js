@@ -56,7 +56,6 @@ const main = () => {
     };
 
     const simulator = new Simulator(nodes);
-    simulator.run();
 
     simulator.send('A', 'C');
 }
