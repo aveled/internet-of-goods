@@ -1,9 +1,9 @@
 // #region imports
     // #region internal
-    import Magnet from './objects/Magnet';
     import Node from './objects/Node';
     import Pod from './objects/Pod';
-    import Server from './objects/Server';
+    import Location from './objects/Location';
+    import Magnet from './objects/Magnet';
 
     import Simulator from './objects/Simulator';
     // #endregion internal
@@ -13,10 +13,10 @@
 
 // #region exports
 export {
-    Magnet,
     Node,
+    Location,
+    Magnet,
     Pod,
-    Server,
 
     Simulator,
 };

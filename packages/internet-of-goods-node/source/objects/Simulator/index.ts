@@ -1,6 +1,10 @@
 // #region imports
     // #region external
-    import Server from '../Server';
+    import {
+        NodeDefinition,
+    } from '~data/interfaces';
+
+    import Node from '../Node';
     // #endregion external
 // #endregion imports
 
@@ -9,6 +13,7 @@
 // #region module
 class Simulator {
     constructor(
+        nodes: NodeDefinition[],
     ) {
     }
 
@@ -17,6 +22,11 @@ class Simulator {
         from: string,
         to: string,
     ) {
+
+    }
+
+
+    private initializeNodes() {
 
     }
 }
