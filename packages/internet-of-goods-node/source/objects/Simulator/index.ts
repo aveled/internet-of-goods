@@ -58,11 +58,17 @@ class Network extends EventEmitter {
                 continue;
             }
 
-            // pod.updateLocation();
+            this.updatePod(pod);
             remainingPods.push(pod);
         }
 
         this.sendingPods = remainingPods;
+    }
+
+    private updatePod(
+        pod: Pod,
+    ) {
+        // pod.updateLocation();
     }
 }
 

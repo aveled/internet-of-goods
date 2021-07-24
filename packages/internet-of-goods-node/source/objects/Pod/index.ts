@@ -1,8 +1,7 @@
 // #region module
 class Pod {
-    private sender = '';
-    private destination = '';
-
+    public sender = '';
+    public destination = '';
     public location = '';
     public arrived = false;
 
