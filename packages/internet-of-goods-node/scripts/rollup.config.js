@@ -29,6 +29,9 @@ const build = {
             sourcemap: true
         }
     ],
+    external: [
+        'events',
+    ],
     plugins: [
         typescript({
             typescript: ttypescript,
