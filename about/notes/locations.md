@@ -54,3 +54,17 @@ C-1-1
 C-1-2
 C-1-3
 ```
+
+
+```
+Send from Node C to Node A
+
+Tube A2 or Tube A3 can be picked
+
+with tube A2 picked
+
+A-2-4
+A-2-3
+A-2-2
+A-2-1
+```
